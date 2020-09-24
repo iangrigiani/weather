@@ -11,7 +11,7 @@ locationForm.addEventListener('submit', (e) => {
     p2.textContent = '';
 
     const addresssValue = inputValue.value;
-    fetch('http://localhost:3000/weather?address=' + addresssValue).then((response) => {
+    fetch('/weather?address=' + addresssValue).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 p1.textContent = data.error;    

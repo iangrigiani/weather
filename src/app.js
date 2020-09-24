@@ -10,6 +10,8 @@ const publicDirectoryPath = path.join(__dirname, '../public');
 const templatesDirectoryPath = path.join(__dirname, '../templates/views');
 const partialsDirectoryPath = path.join(__dirname, '../templates/partials');
 
+const port = process.env.PORT || 3000;
+
 app.set('view engine', 'hbs');
 app.set('views', templatesDirectoryPath);
 hbs.registerPartials(partialsDirectoryPath);
@@ -81,6 +83,6 @@ app.get('*', (req, res)=>{
 
 })
 
-app.listen(3000, ()=> {
-    console.log('Running...');
+app.listen(port, ()=> {
+    console.log('Starting app in port ' + port);
 });
