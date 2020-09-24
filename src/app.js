@@ -60,11 +60,14 @@ app.get('/weather', (req, res)=>{
         if (error) {
             res.send({error});
         } else {
-            weatherstack(lat, long, (error, {temp, desc}={}) => {
+            weatherstack(lat, long, (error, {icon, hum, precip, temp, desc}={}) => {
                 if (error) {
                     res.send({error});
                 } else {
                     res.send({
+                        icon, 
+                        hum,
+                        precip,
                         temp,
                         desc
                     });

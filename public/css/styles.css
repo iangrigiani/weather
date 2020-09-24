@@ -53,3 +53,9 @@ button {
     color: white;
     padding: 8px;
 }
+
+.clima {
+    border-radius: 70%;
+    height: 65px;
+    width: 65px;
+}

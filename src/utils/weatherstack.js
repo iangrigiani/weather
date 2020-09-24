@@ -9,7 +9,10 @@ const getWeather = (lat, long, callback) => {
             callback('Unable to get information to that location', undefined);
         } else {
             callback(undefined, {
+                icon: body.current.weather_icons[0],
                 temp: body.current.temperature,
+                hum: body.current.humidity,
+                precip: body.current.precip,
                 desc: body.current.weather_descriptions[0]
             });
         }
